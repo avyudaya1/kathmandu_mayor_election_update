@@ -7,4 +7,6 @@ app = Flask(__name__, template_folder='templates')
 @app.route("/")
 def index():
     result = scrape_election()
+    print(result)
+    return "hello"
     return render_template('index.html', data=result)

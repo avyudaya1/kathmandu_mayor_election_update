@@ -30,5 +30,4 @@ def scrape_election():
     for x in range(0, len_name):
         final.append({'mayor_name': mayor_name[x].text, 'candidate_party_name': candidate_party_name[x].text, 'vote_numbers': vote_numbers[x].text, 'image': img[x]})
 
-    print(img)
     return final
