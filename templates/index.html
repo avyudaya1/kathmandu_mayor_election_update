@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kathmandu Mayor Election Update</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container section mt-4">
+      <h1 class="fw-bold">Kathmandu Mayor Election Update</h1>
+
+      <div class="row mt-5">
+      {% for value in data %}
+
+      <div class="col">
+        <div class="card border-light" style="width: 12rem;">
+          <img src="{% if value.image == 'https://assets-localelection2079.ekantipur.com/candidates/' %} https://jcss-localelection2079.ekantipur.com/img/user-placeholder.svg {% else %} {{value.image}} {% endif %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">{{value.mayor_name}}</h4>
+            <h5 class="card-text fw-light">{{value.candidate_party_name}}</h5>
+            <h5 class="card-text">{{value.vote_numbers}}</h5>
+          </div>
+        </div>
+        </div>
+      {% endfor %}
+    </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
